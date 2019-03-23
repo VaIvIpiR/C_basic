@@ -12,13 +12,13 @@ namespace Homework_1
         private static double x; //первое число
         private static double y; //второе число
         private static char operation; // опирация над числами
-        private static double z; // конечный ответ
+        private static double z; // результат
 
         // главный метод main который вызывает все остальные методы
         static void Main(string[] args)
         {
 
-
+            Console.WriteLine("I am a small console calculator. I'm here to help you with simple calculations.");
             Condition(); //Вызов метода ввода исходных даных
 
             Console.ReadKey();
@@ -35,45 +35,40 @@ namespace Homework_1
         public static void Condition()
         {
 
-            Console.WriteLine("Enter x:");
+            Console.Write("Enter x: ");
             Verification();
-            x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter y:");
+            Console.Write("Enter y: ");
             y = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter operation:");
-            Verification();
+            Console.Write("Enter operation: ");
             operation = Convert.ToChar(Console.ReadLine());
-            Calculation();
+            Calculation(); //вывод метода вычисления результата
         }
-        // Метод для вычисления конечного ответа
+        // Метод для вычисления результата
         public static void Calculation()
         {
             switch (operation)
             {
                 case '+':
                     z = x + y;
-                    Console.WriteLine(z);
+                    Console.WriteLine($"Result: {z}");
                     break;
 
                 case '-':
                     z = x - y;
-                    Console.WriteLine(z);
+                    Console.WriteLine($"Result: {z}");
                     break;
 
                 case '*':
                     z = x * y;
-                    Console.WriteLine(z);
+                    Console.WriteLine($"Result: {z}");
                     break;
 
                 case '/':
-                    if (y != 0)
-                    {
+                        Verification();
                         z = x / y;
-                        Console.WriteLine(z);
+                        Console.WriteLine($"Result: {z}");
                         break;
-                    }
-                    else
-                        Console.WriteLine("The denominator can not be equel to zero");
+                
                 default:
                     Console.WriteLine("The operation is unknown. ");
                     break;
@@ -83,15 +78,22 @@ namespace Homework_1
         // Метод проверки правильности введенных данных
         public static void Verification()
         {
-            if (x )
+            try
             {
-                Console.WriteLine("Converted '{0}' to {1}.", value, number);
-            }
-            else
-            {
-                Console.WriteLine("Attempted conversion of '{0}' failed.",
-                                   value ?? "<null>");
+                x = Convert.ToDouble(Console.ReadLine());
 
             }
+            catch
+            {
+                Console.WriteLine("You entered invalid value. Please try again.");
+                Console.ReadKey();
+                System.Environment.Exit(0);
+            }
+            finally
+            {
+
+            }
+        }
+            
     }
 }
