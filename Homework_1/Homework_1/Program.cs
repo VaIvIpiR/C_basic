@@ -20,15 +20,10 @@ namespace Homework_1
 
             Console.WriteLine("I am a small console calculator. I'm here to help you with simple calculations.");
             Condition(); //Вызов метода ввода исходных даных
+            Calculation(); //вывод метода вычисления результата
 
             Console.ReadKey();
 
-            /* Console.WriteLine("Enter x:");
-             x = Console.ReadLine();
-             Console.WriteLine("Enter y:");
-             y = Console.ReadLine();
-             Console.WriteLine("Enter operation:");
-             operation = Console.ReadLine();*/
 
         }
         //Метод для ввода исходных даных
@@ -36,12 +31,11 @@ namespace Homework_1
         {
 
             Console.Write("Enter x: ");
-            Verification();
+            Verification_x();
             Console.Write("Enter y: ");
-            y = Convert.ToDouble(Console.ReadLine());
+            Verification_y();
             Console.Write("Enter operation: ");
-            operation = Convert.ToChar(Console.ReadLine());
-            Calculation(); //вывод метода вычисления результата
+            Verification_operation();
         }
         // Метод для вычисления результата
         public static void Calculation()
@@ -50,50 +44,101 @@ namespace Homework_1
             {
                 case '+':
                     z = x + y;
-                    Console.WriteLine($"Result: {z}");
+                    Console.Write($"Result: {z}");
                     break;
 
                 case '-':
                     z = x - y;
-                    Console.WriteLine($"Result: {z}");
+                    Console.Write($"Result: {z}");
                     break;
 
                 case '*':
                     z = x * y;
-                    Console.WriteLine($"Result: {z}");
+                    Console.Write($"Result: {z}");
                     break;
 
                 case '/':
-                        Verification();
-                        z = x / y;
-                        Console.WriteLine($"Result: {z}");
+                        Division_by_zero();
                         break;
                 
                 default:
-                    Console.WriteLine("The operation is unknown. ");
+                    Console.Write("The operation is unknown.");
                     break;
 
             }
         }
-        // Метод проверки правильности введенных данных
-        public static void Verification()
+        // Метод проверки правильности введеного "х"
+        public static void Verification_x()
+        {
+            do
+            {
+                try
+                {
+                    x = Convert.ToDouble(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.Write("Invalid value. Please, try again: ");
+                }
+            } while (true);
+
+        }
+
+        // Метод проверки правильности введеного "у"
+        public static void Verification_y()
+        {
+            do
+            {
+                try
+                {
+                    y = Convert.ToDouble(Console.ReadLine());
+                    break;
+
+                }
+                catch (FormatException)
+                {
+                    Console.Write("Invalid value. Please, try again: ");
+                }
+            } while (true);
+
+        }
+
+        // Метод проверки правильности введения операции 
+        public static void Verification_operation()
+        {
+            do
+            {
+                try
+                {
+                    operation = Convert.ToChar(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.Write("Invalid value. Please, try again: ");
+                }
+            } while (true);
+
+        }
+
+        public static void Division_by_zero()
         {
             try
             {
-                x = Convert.ToDouble(Console.ReadLine());
-
+                z = x / y;
             }
             catch
             {
-                Console.WriteLine("You entered invalid value. Please try again.");
-                Console.ReadKey();
-                System.Environment.Exit(0);
+                Console.WriteLine("You try to divide by zero!");
             }
             finally
             {
-
+                z = x / y;
+                Console.Write($"Result: {z}");
             }
+
         }
-            
+
     }
 }
