@@ -8,13 +8,13 @@ namespace Homework_1
 {
     class Program
     {
-        // объявление всех переменных в теле класа (что бы не объявлять их в каждом методе отдельно)
+        // Объявление всех переменных в теле класа (что бы не объявлять их в каждом методе отдельно)
         private static double x; //первое число
         private static double y; //второе число
         private static char operation; // опирация над числами
         private static double z; // результат
 
-        // главный метод main который вызывает все остальные методы
+        // Главный метод main который вызывает все остальные методы
         static void Main(string[] args)
         {
 
