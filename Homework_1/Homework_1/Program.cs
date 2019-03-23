@@ -20,7 +20,7 @@ namespace Homework_1
 
             Console.WriteLine("I am a small console calculator. I'm here to help you with simple calculations.");
             Condition(); //Вызов метода ввода исходных даных
-            Calculation(); //вывод метода вычисления результата
+            Calculation(); //Вызод метода вычисления результата
 
             Console.ReadKey();
 
@@ -31,11 +31,11 @@ namespace Homework_1
         {
 
             Console.Write("Enter x: ");
-            Verification_x();
+            Verification_x();  // Вызов метода проверки правильности введеного "х"
             Console.Write("Enter y: ");
-            Verification_y();
+            Verification_y();  // Вызов метода проверки правильности введеного "y"
             Console.Write("Enter operation: ");
-            Verification_operation();
+            Verification_operation(); // Вызов метода проверки правильности введения операции 
         }
         // Метод для вычисления результата
         public static void Calculation()
@@ -58,8 +58,8 @@ namespace Homework_1
                     break;
 
                 case '/':
-                        Division_by_zero();
-                        break;
+                    Division_by_zero(); //Вызов метода проверки деления на "0"
+                    break;
                 
                 default:
                     Console.Write("The operation is unknown.");
@@ -122,22 +122,23 @@ namespace Homework_1
 
         }
 
+        // Метод проверки деления на "0"
         public static void Division_by_zero()
         {
-            try
+            do
             {
-                z = x / y;
-            }
-            catch
-            {
-                Console.WriteLine("You try to divide by zero!");
-            }
-            finally
-            {
-                z = x / y;
-                Console.Write($"Result: {z}");
-            }
-
+                if (y == 0)
+                {
+                    Console.WriteLine("You try to divide by zero! Please try again");
+                    Condition();
+                }
+                else
+                {
+                    z = x / y;
+                    Console.Write($"Result: {z}");
+                    break;
+                }
+            } while (true);
         }
 
     }
