@@ -8,25 +8,25 @@ namespace Fibonacci_number
 {
     class Program
     {
-        private static Int32 a;
         private static Int32 n;
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Fibonacci number.");
+            Console.WriteLine("Fibonacci numbers.");
             Console.Write("Enter position: ");
-            Tryparse_a();
-            Fibonacci_position(n);
+            Tryparse_n();
+            Int32 result = Fibonacci_position(n);
+            Console.Write("Your fibonacci number is: ", result);
             Console.ReadKey();
         }
 
-        static void Tryparse_a()
+        static void Tryparse_n()
         {
             do
             {
                 try
                 {
-                    a = Convert.ToInt32(Console.ReadLine());
+                    n = Convert.ToInt32(Console.ReadLine());
                     break;
                 }
                 catch (FormatException)
@@ -40,8 +40,8 @@ namespace Fibonacci_number
         static int Fibonacci_position(int n)
         {
             if (n == 0 || n == 1)
-                return 1;
-          else return Fibonacci_position(n - 1) + Fibonacci_position(n - 2);          
+            return 1;
+            else return Fibonacci_position(n - 1) + Fibonacci_position(n - 2);          
           
         }
     }
