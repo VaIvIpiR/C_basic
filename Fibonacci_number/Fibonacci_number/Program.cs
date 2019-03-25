@@ -15,7 +15,7 @@ namespace Fibonacci_number
             Console.WriteLine("Fibonacci numbers.");
             Console.Write("Enter position: ");
             Tryparse_n();
-            Int32 result = Fibonacci_position(n);
+            long result = Fibonacci_position(n);
             Console.Write("Your fibonacci number is: ", result);
             Console.ReadKey();
         }
@@ -37,12 +37,14 @@ namespace Fibonacci_number
         }
             
 
-        static int Fibonacci_position(int n)
+        static long Fibonacci_position(int n)
         {
             if (n == 0 || n == 1)
-            return 1;
-            else return Fibonacci_position(n - 1) + Fibonacci_position(n - 2);          
-          
+                return 1;
+            else
+            {
+                return Fibonacci_position(n - 1) + Fibonacci_position(n - 2);
+            }
         }
     }
 }
