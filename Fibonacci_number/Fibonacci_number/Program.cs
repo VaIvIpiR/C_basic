@@ -16,11 +16,11 @@ namespace Fibonacci_number
             Console.Write("Enter position: ");
             Tryparse_n();
             long result = Fibonacci_position(n);
-            Console.Write("Your fibonacci number is: ", result);
+            Console.Write($"Your fibonacci number is: {result}");
             Console.ReadKey();
         }
 
-        static void Tryparse_n()
+        public static void Tryparse_n()
         {
             do
             {
@@ -37,10 +37,10 @@ namespace Fibonacci_number
         }
             
 
-        static long Fibonacci_position(int n)
+        public static int Fibonacci_position(int n)
         {
             if (n == 0 || n == 1)
-                return 1;
+                return n;
             else
             {
                 return Fibonacci_position(n - 1) + Fibonacci_position(n - 2);
