@@ -8,18 +8,30 @@ namespace Fibonacci_number
 {
     class Program
     {
-        private static Int32 n;
+        private static Int32 n; //Номер позиции 
 
         static void Main(string[] args)
         {
             Console.WriteLine("Fibonacci numbers.");
-            Console.Write("Enter position: ");
-            Tryparse_n();
-            long result = Fibonacci_position(n);
-            Console.Write($"Your fibonacci number is: {result}");
+            Data();
+            Solution();
             Console.ReadKey();
         }
 
+        //Метод для ввода исходных даных
+        public static void Data()
+        {
+            Console.Write("Enter position: ");
+            Tryparse_n(); //Вызов метода проверки "n"
+        }
+
+        public static void Solution()
+        {
+            long result = Fibonacci_position(n); // Присвоения решения метода вычисления числа фибоначчи
+            Console.Write($"Your fibonacci number is: {result}");
+        }
+
+        //Метод проверки "n"
         public static void Tryparse_n()
         {
             do
@@ -36,7 +48,7 @@ namespace Fibonacci_number
             } while (true);
         }
             
-
+        //Метод вычисления числа фибоначчи
         public static int Fibonacci_position(int n)
         {
             if (n == 0 || n == 1)
