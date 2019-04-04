@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="700"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
-            <Button Click="StartDrawingLines">Draw Line</Button>
-            <Button Click="StartDrawingCircles">Draw Circle</Button>
-            <Button Click="StartDrawingSquares">Draw Square</Button>
-            <Button Click="Clear">Clear</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="350"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+            <Button Click="StartDrawingLines" Width="200">Draw Line</Button>
+            <Button Click="StartDrawingCircles" Width="200">Draw Circle</Button>
+            <Button Click="StartDrawingSquares" Width="200">Draw Square</Button>
+            <Button Click="Clear" Width="200">Clear</Button>
         </StackPanel>
-        <Canvas Grid.Row="0"
-                Grid.Column="1"  
+        <Canvas Grid.Row="1"
+                Grid.Column="0"  
                 Name="MyCanvas"
                 MouseLeftButtonUp="HandleMouseClick"
-                Width="698"
+                Width="800"
                 Height="448"
                 Background="WhiteSmoke">
         </Canvas>
