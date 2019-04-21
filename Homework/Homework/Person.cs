@@ -15,12 +15,10 @@ namespace Homework
         private DateTime dateOfBirth;
         public int Age { get; private set; }
 
-        public int GetAge()
+       public virtual void GoToTheDeanery()
         {
-            System.DateTime dateNow = DateTime.Now;
-            return (dateNow.Year - dateOfBirth.Year);
+            Console.WriteLine("I am going to the deanery");
         }
-
         public Person(string fname, string lname, int age)
         {
             FirstName = fname;
