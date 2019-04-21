@@ -9,8 +9,9 @@ namespace Homework
             Console.WriteLine("Hello World!");
 
             var deanstaff = new DeanStaff("Ivan", "Ivanov", 45);
-            var student = new Student();
-            var teacher = new Teacher();
+            var student = new Student("Sasha", "Shpadkivskyi", 23);
+            var teacher = new Teacher("Petro", "Solomak", 52);
+
         }
     }
 }
