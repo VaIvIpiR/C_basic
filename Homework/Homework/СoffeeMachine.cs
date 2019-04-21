@@ -6,6 +6,6 @@ namespace Homework
 {
     class СoffeeMachine : Equipment
     {
-        protected 
+         
     }
 }

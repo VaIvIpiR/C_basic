@@ -6,6 +6,9 @@ namespace Homework
 {
     class Student : Person
     {
+        internal Student(int age, string fname, string lname) : base(age, fname, lname)
+        {
 
+        }
     }
 }
