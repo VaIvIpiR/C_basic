@@ -10,7 +10,7 @@ namespace Homework
             var deanstaff = new DeanStaff("Ivan", "Ivanov", 45);
             var student = new Student("Sasha", "Shpadkivskyi", 23);
             var teacher = new Teacher("Petro", "Solomak", 52);
-            var printer = new Printer();
+            var scanner = new Scanner();
             var coffemachine = new СoffeeMachine();
 
             Console.Write("Dean Staff: ");
@@ -20,7 +20,7 @@ namespace Homework
             Console.Write("Teacher: ");
             teacher.GoToTheDeanery();
             Console.Write("Printer: ");
-            printer.DoSomething();
+            scanner.DoSomething();
             Console.Write("Coffee Machine: ");
             coffemachine.DoSomething();
 

@@ -4,11 +4,8 @@ using System.Text;
 
 namespace Homework
 {
-    class Printer : Equipment
+   abstract class Printer : Equipment
     {
-        public void DoSomething()
-        {
-            Console.WriteLine("Printing...");
-        }
+        public abstract void DoSomething();
     }
 }
