@@ -6,6 +6,9 @@ namespace Homework
 {
     class Printer : Equipment
     {
-
+        public void DoSomething()
+        {
+            Console.WriteLine("Printing...");
+        }
     }
 }

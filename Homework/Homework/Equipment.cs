@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Homework
 {
-    class Equipment
+   public interface Equipment
     {
-
+        void DoSomething();
     }
 }
