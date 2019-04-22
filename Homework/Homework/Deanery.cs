@@ -19,7 +19,7 @@ namespace Homework
             student.GoToTheDeanery();
             Console.Write("Teacher: ");
             teacher.GoToTheDeanery();
-            Console.Write("Printer: ");
+            Console.Write("Scanner: ");
             scanner.DoSomething();
             Console.Write("Coffee Machine: ");
             coffemachine.DoSomething();
